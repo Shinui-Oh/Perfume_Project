@@ -1,2 +1,5 @@
 # Perfume_Project
-Team Project(김영서, 문석준, 오신의, 유정화)
+
+Backend Code 작성 및 수정
+Branch 제작 및 코드 수정
+Branch 별 코드 merge
