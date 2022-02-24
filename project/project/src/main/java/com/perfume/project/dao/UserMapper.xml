@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.perfume.project.dao.UserMapper">
+    <insert id="insertUser" parameterType="userDto">
+        INSERT INTO user_db VALUES (#{userName}, #{userId}, #{userPw}, #{userZipcode}, #{userAddress}, #{userBirth}, #{userGender}, #{userTel})
+    </insert>
+
+    <update id="updateUser" parameterType="userDto">
+        UPDATE user_db
+        SET user_name = #{userName}, user_pw = #{userPw}, user_zipcode = #{userZipcode}, user_address = #{userAddress}, user_birth = #{userBirth}, user_gender = #{userGender}, user_tel = #{userTel}
+        WHERE user_id = #{userId}
+    </update>
+
+    <delete id="deleteUser" parameterType="string">
+        DELETE FROM user WHERE user_id = #{userId}
+    </delete>
+
+    <select id="selectOneUser" parameterType="string" resultType="userDto">
+        SELECT * FROM user WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectAllUser" resultType="userDto">
+        SELECT * FROM user_db
+    </select>
+</mapper>
